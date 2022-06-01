@@ -6,7 +6,16 @@ typedef long long ll;
 class Solution{
   public:
     ll n_fibonacci(int n){
-      if(n==0) return 1;
+      //base case
+      if(n==0) return 0;
+      if(n==1) return 1;
+      
+      //recursive calls
+      ll rec1 = n_fibonacci(n-1);
+      ll rec2 = n_fibonacci(n-2);
+      
+      ll smallCal = rec1 + rec2; 
+      return smallCal;
       
     }
 };
@@ -19,7 +28,7 @@ int main(){
     cin>>n;
     
     Solution ob;
-    cout<<n_fibonacci(n)<<endl;
+    cout<<ob.n_fibonacci(n)<<endl;
   }
   return 0;
 }
